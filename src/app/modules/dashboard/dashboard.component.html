@@ -1,27 +1,33 @@
 <div>
-   <app-widget-area></app-widget-area>
+   <app-widget-area [data]="bigChart"></app-widget-area>
 </div>
 <br>
 <mat-divider></mat-divider>
 <br>
 <div fxLayout="row" fxLatoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
     <mat-card fxFlex="25">
-        Stats
+        <app-widgets-cards label="All users" total="20k" percentage="80" [data]="cards"></app-widgets-cards>
     </mat-card>
     <mat-card fxFlex="25">
-        Stats
+        <app-widgets-cards label="New users" total="18k" percentage="60" [data]="cards"></app-widgets-cards>
     </mat-card>
     <mat-card fxFlex="25">
-        Stats
+        <app-widgets-cards label="Active users" total="16k" percentage="40" [data]="cards"></app-widgets-cards>
     </mat-card>
     <mat-card fxFlex="25">
-        Stats
+        <app-widgets-cards label="Premium users" total="14k" percentage="30" [data]="cards"></app-widgets-cards>
     </mat-card>
 </div>
 <br>
 <mat-divider></mat-divider>
 <br>
 <div>
-    <div>Table</div>
-    <div>Pie chart</div>
+    <div fxLayout="row" fxLatoutAlign="space-between center" fxLayoutGap="20px" >
+        <div fxFlex="60"> 
+            <app-widget-table [data]="tableData"></app-widget-table>
+        </div>
+        
+    <div fxFlex="40">
+        <app-widget-pie-chart [data]="pieChart"></app-widget-pie-chart>
+    </div>
 </div>

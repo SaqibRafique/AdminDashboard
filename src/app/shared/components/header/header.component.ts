@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  Highcharts = Highcharts;
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
@@ -14,5 +17,12 @@ export class HeaderComponent implements OnInit {
   toggleSideBar(){
     console.log("ToggleSidebar is called")
     this.toggleSideBarForMe.emit();
+    HC_exporting(Highcharts);
+    setTimeout(()=> {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
+    }
   }
-}
+
