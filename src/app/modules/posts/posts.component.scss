@@ -1,0 +1,15 @@
+.main{
+    display: inline-block;
+    width: 50%;
+}
+.treeButton{
+    border: none;
+    background: none;
+}
+.artigo_nome {
+    border: 1px solid black;
+    display: inline-block;
+    max-width: 250px;
+    padding: 10px;
+    word-break: break-all; /* optional */
+}
